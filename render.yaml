@@ -1,0 +1,25 @@
+# Render Blueprint — New > Blueprint > connect this repo.
+# Use an always-on plan: free instances sleep after 15 min idle and a cold start can fail the judge's healthz.
+services:
+  - type: web
+    name: vera-bot
+    runtime: python
+    plan: starter
+    buildCommand: "echo no-deps"
+    startCommand: "python server.py"
+    healthCheckPath: /v1/healthz
+    numInstances: 1          # state is in memory: keep exactly one instance
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: VERA_TEAM_NAME
+        value: "Team Vera"
+      - key: VERA_TEAM_MEMBERS
+        value: "Your Name"
+      - key: VERA_CONTACT_EMAIL
+        value: "you@example.com"
+      # Optional LLM layer (leave unset for pure deterministic mode)
+      # - key: VERA_LLM_PROVIDER
+      #   value: anthropic
+      # - key: VERA_LLM_API_KEY
+      #   sync: false
