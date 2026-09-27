@@ -24,13 +24,13 @@ import replies  # noqa: E402
 MAX_BODY = 600_000
 
 METADATA = {
-    "team_name": os.environ.get("VERA_TEAM_NAME", "Team Vera"),
-    "team_members": [m.strip() for m in os.environ.get("VERA_TEAM_MEMBERS", "Your Name").split(",")],
+    "team_name": os.environ.get("VERA_TEAM_NAME", "Hardik Kadyan"),
+    "team_members": [m.strip() for m in os.environ.get("VERA_TEAM_MEMBERS", "Hardik Kadyan").split(",")],
     "model": llm.model_name(),
     "approach": ("fact-pack resolver + per-trigger-kind decision playbooks (send/skip, angle, recommendation, CTA) "
                  "+ number-grounding validator; rule-based reply state machine (auto-reply, intent, hostile, "
                  "off-topic); optional validated LLM polish"),
-    "contact_email": os.environ.get("VERA_CONTACT_EMAIL", "you@example.com"),
+    "contact_email": os.environ.get("VERA_CONTACT_EMAIL", "hardikkadyan23ee092@dtu.ac.in"),
     "version": __version__,
     "submitted_at": os.environ.get("VERA_SUBMITTED_AT", "2026-09-27T00:00:00Z"),
 }
