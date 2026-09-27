@@ -24,8 +24,8 @@ import replies  # noqa: E402
 MAX_BODY = 600_000
 
 METADATA = {
-    "team_name": os.environ.get("VERA_TEAM_NAME", "Hardik Kadyan"),
-    "team_members": [m.strip() for m in os.environ.get("VERA_TEAM_MEMBERS", "Hardik Kadyan").split(",")],
+           "team_name": "Hardik Kadyan",
+           "team_members": ["Hardik Kadyan"],
     "model": llm.model_name(),
     "approach": ("fact-pack resolver + per-trigger-kind decision playbooks (send/skip, angle, recommendation, CTA) "
                  "+ number-grounding validator; rule-based reply state machine (auto-reply, intent, hostile, "
